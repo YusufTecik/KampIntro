@@ -8,7 +8,10 @@ namespace ClassMetotDemo
         {
             Musteri m1 = new Musteri()
             {
-                Ad = "Ahmet",Soyad= "Mümtaz",Yaş= 33,Id = 12345678912
+                Ad = "Ahmet",
+                Soyad = "Mümtaz",
+                Yaş = 33,
+                Id = 12345678912
             };
 
             Musteri m2 = new Musteri()
@@ -26,23 +29,29 @@ namespace ClassMetotDemo
                 Id = 475203698525
             };
 
-            Musteri[] musteriListesi1 = new Musteri[] { m1 };
-            foreach (var m in musteriListesi1)
-            {
-                Console.WriteLine(m1.Ad + " " + m1.Soyad);
-            }
+            MusteriManager musteriManager = new MusteriManager();
 
-            Musteri[] musteriListesi2 = new Musteri[] { m2 };
-            foreach (var m in musteriListesi1)
-            {
-                Console.WriteLine(m2.Ad + " " + m2.Soyad);
-            }
+            musteriManager.Listele(m1);
+            Console.WriteLine(" ");
+            musteriManager.Listele2(m2);
+            Console.WriteLine(" ");
+            musteriManager.Listele3(m3);
+            Console.WriteLine(" ");
 
-            Musteri[] musteriListesi3 = new Musteri[] { m3 };
-            foreach (var m in musteriListesi1)
-            {
-                Console.WriteLine(m3.Ad + " " + m3.Soyad);
-            }
+            musteriManager.Ekle(m1);
+            Console.WriteLine(" ");
+            musteriManager.Ekle(m2);
+            Console.WriteLine(" ");
+            musteriManager.Ekle(m3);
+            Console.WriteLine(" ");
+            Console.WriteLine(" -------------------------- ");
+            Console.WriteLine(" ");
+
+            musteriManager.Sil(m1);
+            Console.WriteLine(" ");
+            musteriManager.Sil(m2);
+            Console.WriteLine(" ");
+            musteriManager.Sil(m3);
         }
     }
 }
